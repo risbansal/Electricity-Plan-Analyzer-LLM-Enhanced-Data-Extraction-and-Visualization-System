@@ -1,11 +1,10 @@
 read_efl:
   description: >-
-    crawl the website https://www.championenergyservices.com/Residential/Sign-Up?promo=&zip=75252
-    and find the "Electricity Facts Label" under "See More Plan Details" and write
-    is as markdown
+    get data from pdf files in 'files' folder as markdown. 
+    
 
   expected_output: >-
-    markdown version of Electricity Facts Label
+    markdown version of pdf
   agent: >-
     data_collector
 
@@ -24,10 +23,10 @@ get_relevant_data:
   agent: >-
     data_analyzer
 
-write_to_file:
-  description: >-
-    append data to output/out.csv
-  expected_output: >-
-    out.csv file with extracted and analyzed data
-  agent: >-
-    data_writer
+# write_to_file:
+#   description: >-
+#     append data to output/out.csv
+#   expected_output: >-
+#     out.csv file with extracted and analyzed data
+#   agent: >-
+#     data_writer
