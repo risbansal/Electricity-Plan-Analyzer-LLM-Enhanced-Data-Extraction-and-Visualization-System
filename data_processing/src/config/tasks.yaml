@@ -1,0 +1,33 @@
+read_efl:
+  description: >-
+    crawl the website https://www.championenergyservices.com/Residential/Sign-Up?promo=&zip=75252
+    and find the "Electricity Facts Label" under "See More Plan Details" and write
+    is as markdown
+
+  expected_output: >-
+    markdown version of Electricity Facts Label
+  agent: >-
+    data_collector
+
+# create_graph:
+#   description: >-
+#     create a graph to represent the data in data.csv file stored in "D:\Projects\WhiteGlove\data_processing\src\output" folder
+#   expected_output: >-
+#     graph.jpg stored in "D:\Projects\WhiteGlove\data_processing\src\output" folder
+#   agent: >-
+#     graph_creator
+get_relevant_data:
+  description: >-
+    get Company name, plan name, base charge and energy charge from Electricity Facts Label
+  expected_output: >-
+    Company name, plan name, base charge and energy charge
+  agent: >-
+    data_analyzer
+
+write_to_file:
+  description: >-
+    append data to output/out.csv
+  expected_output: >-
+    out.csv file with extracted and analyzed data
+  agent: >-
+    data_writer
