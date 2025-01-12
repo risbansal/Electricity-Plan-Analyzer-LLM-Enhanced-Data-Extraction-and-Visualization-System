@@ -34,7 +34,7 @@ class DataprocessingCrew():
     def data_collector(self) -> Agent:
         return Agent(
             config=self.agents_config['data_collector'],
-            tools=[*tools.composio_tools],  # Pass in what tools this agent should have
+            tools=[tools.web_scrape, tools.web_crawl],  # Pass in what tools this agent should have
             # llm = self.ollama_llm,
             verbose=True,
             
@@ -59,23 +59,19 @@ class DataprocessingCrew():
         
     
 
-    # @agent
-    # def graph_creator(self) -> Agent:
-    #     return Agent(
-    #         config=self.agents_config['graph_creator'],
-    #         tools=[tools.web_scrape, tools.web_crawl, tools.retrieve_web_crawl], # add tools here or use `agentstack tools add <tool_name>
-    #         verbose=True,
-    #     )
-
-    # Task definitions
+   
    
     @task
-  
-    @task
-    def read_efl(self) -> Task:
+    def get_data(self) -> Task:
         return Task(
-            config=self.tasks_config['read_efl'],
+            config=self.tasks_config['get_data'],
         )
+  
+    # @task
+    # def read_efl(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['read_efl'],
+    #     )
 
     @task
     def get_relevant_data(self) -> Task:
@@ -83,16 +79,12 @@ class DataprocessingCrew():
             config=self.tasks_config['get_relevant_data'],
         )
 
+   
+
     # @task
     # def write_to_file(self) -> Task:
     #     return Task(
     #         config=self.tasks_config['write_to_file'],
-    #     )
-
-    # @task
-    # def create_graph(self) -> Task:
-    #     return Task(
-    #         config=self.tasks_config['create_graph'],
     #     )
 
     @crew

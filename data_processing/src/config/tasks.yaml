@@ -1,25 +1,28 @@
-read_efl:
-  description: >-
-    get data from pdf files in 'files' folder as markdown. 
-    
 
+get_data:
+  description: >-
+    Browse https://sales.energysavings.com/plan-selection?zipCode=75252&promoCode=Default
+    for every company get plan details  and write to markdown
   expected_output: >-
-    markdown version of pdf
+    Add your expected_output here
   agent: >-
     data_collector
 
-# create_graph:
+# read_efl:
 #   description: >-
-#     create a graph to represent the data in data.csv file stored in "D:\Projects\WhiteGlove\data_processing\src\output" folder
+#     write contents of 'efl' link ot a markdown
 #   expected_output: >-
-#     graph.jpg stored in "D:\Projects\WhiteGlove\data_processing\src\output" folder
+#     markdown information of efl or Electricity Facts Label
 #   agent: >-
-#     graph_creator
+#     data_collector
+
+
 get_relevant_data:
   description: >-
-    get Company name, plan name, base charge and energy charge from Electricity Facts Label
+    get Company name, plan name, base charge and energy charge from Electricity Facts
+    Label or EFL of different companies
   expected_output: >-
-    Company name, plan name, base charge and energy charge
+    Company name, plan name, and energy charge
   agent: >-
     data_analyzer
 
@@ -30,3 +33,4 @@ get_relevant_data:
 #     out.csv file with extracted and analyzed data
 #   agent: >-
 #     data_writer
+

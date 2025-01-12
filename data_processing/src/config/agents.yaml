@@ -7,7 +7,7 @@ data_collector:
   backstory: >
     Your are a data collector
   # llm: openai/gpt-4o-mini
-  llm: ollama/gpt-3.5-turbo
+  llm: ollama/gpt-4o
 
 data_analyzer:
   role: >-
@@ -16,7 +16,7 @@ data_analyzer:
     get Company name, plan name, base charge and energy charge from Electricity Facts Label
   backstory: >-
     You like to read Electricity Facts Label and find relevant data
-  llm: ollama/gpt-3.5-turbo
+  llm: ollama/gpt-4o
 
 # data_writer:
 #   role: >-
@@ -25,4 +25,4 @@ data_analyzer:
 #     write data to .csv file
 #   backstory: >-
 #     You like to log entries
-#   llm: openai/gpt-3
+#   llm: ollama/gpt-4o
