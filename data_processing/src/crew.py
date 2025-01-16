@@ -17,7 +17,7 @@ llm = LLM(
 
 
 
-
+#Path to pdf file
 SCRIPT_DIR = Path(__file__).parent.joinpath('files')
 pdf_path = str(SCRIPT_DIR / "plans.pdf")
 
@@ -30,7 +30,6 @@ class DataprocessingCrew():
     """data_processing crew"""
     
 
- 
 
     @agent
     def pdf_reader(self) -> Agent:
@@ -87,9 +86,6 @@ class DataprocessingCrew():
         return Task(
             config=self.tasks_config['write_to_file'],
         )
-
-
-   
 
     @crew
     def crew(self) -> Crew:

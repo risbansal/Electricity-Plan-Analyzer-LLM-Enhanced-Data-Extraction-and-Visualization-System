@@ -5,7 +5,6 @@ read_pdf:
     for each electricity fact label or EFL,
     get  Company Name, Plan Name,  Base Charge and Energy Charge,
     make sure no plan is missed.
-
   expected_output: >-
     information of five plans as markdown
   agent: >-

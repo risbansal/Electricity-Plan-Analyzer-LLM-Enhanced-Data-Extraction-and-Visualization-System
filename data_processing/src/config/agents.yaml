@@ -7,12 +7,7 @@ pdf_reader:
   backstory: >-
     You are a data scientist. You like to read Electricity Facts Label and find relevant
     data
-  # llm: ollama/llama3.2:3b
-  # llm: openai/gpt-3.5-turbo
-  # llm: openai/gpt-4o
   
-
-
 data_cleaner:
   role: >-
     data cleaning
@@ -21,11 +16,6 @@ data_cleaner:
     Label
   backstory: >-
     You are a data scientist. You make sure we have clean data to work with
-  # llm: ollama/mistral
-  # llm: openai/gpt-3.5-turbo
-  # llm: openai/gpt-4o
-  # llm: ollama/llama3.2:3b
-  
 
 data_writer:
   role: >-
@@ -34,10 +24,6 @@ data_writer:
     write data to .csv file
   backstory: >-
     You like to log entries
-  # llm: ollama/gpt-4o
-  # llm: ollama/mistral
-  # llm: openai/gpt-3.5-turbo
-  # llm: ollama/llama3.2:3b
 
   
 
