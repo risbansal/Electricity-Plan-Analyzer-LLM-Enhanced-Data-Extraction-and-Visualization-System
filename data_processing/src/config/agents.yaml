@@ -1,28 +1,43 @@
-data_collector:
-  role: >
-    collect data
-  goal: >
-    read data from a pdf file to markdown
 
-  backstory: >
-    Your are a data collector
-  # llm: openai/gpt-4o-mini
-  llm: ollama/gpt-4o
-
-data_analyzer:
+pdf_reader:
   role: >-
-    Analyze markdowndata and find relevant information 
+    collect data
   goal: >-
-    get Company name, plan name, base charge and energy charge from Electricity Facts Label
+    read data from a pdf file to markdown
   backstory: >-
-    You like to read Electricity Facts Label and find relevant data
-  llm: ollama/gpt-4o
+    You are a data scientist. You like to read Electricity Facts Label and find relevant
+    data
+  # llm: ollama/llama3.2:3b
+  # llm: openai/gpt-3.5-turbo
+  # llm: openai/gpt-4o
+  
 
-# data_writer:
-#   role: >-
-#     write data 
-#   goal: >-
-#     write data to .csv file
-#   backstory: >-
-#     You like to log entries
-#   llm: ollama/gpt-4o
+
+data_cleaner:
+  role: >-
+    data cleaning
+  goal: >-
+    get data in desired format
+    Label
+  backstory: >-
+    You are a data scientist. You make sure we have clean data to work with
+  # llm: ollama/mistral
+  # llm: openai/gpt-3.5-turbo
+  # llm: openai/gpt-4o
+  # llm: ollama/llama3.2:3b
+  
+
+data_writer:
+  role: >-
+    write data 
+  goal: >-
+    write data to .csv file
+  backstory: >-
+    You like to log entries
+  # llm: ollama/gpt-4o
+  # llm: ollama/mistral
+  # llm: openai/gpt-3.5-turbo
+  # llm: ollama/llama3.2:3b
+
+  
+

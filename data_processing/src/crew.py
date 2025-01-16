@@ -3,6 +3,17 @@ from crewai.project import CrewBase, agent, crew, task
 import tools
 from crewai_tools import PDFSearchTool, FileWriterTool
 from pathlib import Path
+from crewai import LLM
+
+llm = LLM(
+    model="gpt-3.5-turbo",
+    temperature=0.8,
+    max_tokens=4000 ,
+    top_p=0.9,
+    frequency_penalty=0.1,
+    presence_penalty=0.1,
+    seed=42
+)
 
 
 
@@ -27,6 +38,7 @@ class DataprocessingCrew():
             config=self.agents_config['pdf_reader'],
             tools=[pdf_search_tool], # add tools here or use `agentstack tools add <tool_name>
             verbose=True,
+            llm = llm
             
             
         )
@@ -38,6 +50,7 @@ class DataprocessingCrew():
             config=self.agents_config['data_cleaner'],
             tools=[], # add tools here or use `agentstack tools add <tool_name>
             verbose=True,
+            llm = llm
             
             
         )
@@ -48,7 +61,7 @@ class DataprocessingCrew():
             config=self.agents_config['data_writer'],
             tools=[FileWriterTool()], # add tools here or use `agentstack tools add <tool_name>
             verbose=True,
-            
+            llm = llm
         )
         
         

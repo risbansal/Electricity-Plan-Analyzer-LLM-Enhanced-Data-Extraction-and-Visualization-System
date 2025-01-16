@@ -4,7 +4,7 @@ import pdfplumber
 import csv
 import os
 
-class file_tool(BaseTool):
+class file_reader(BaseTool):
     
     # def run(self,folder_path):
         
@@ -25,8 +25,9 @@ class file_tool(BaseTool):
                     data.append(extract_data_from_text(text))
         return data
 
-    def write_to_csv(output_file, data):
+    def write_to_csv(data):
         
+        output_file = "D:\Projects\WhiteGlove\data_processing\src\output\out.csv"
         with open(output_file, 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow(['Company Name', 'Plan Name', 'Base Charge', 'Energy Charge'])

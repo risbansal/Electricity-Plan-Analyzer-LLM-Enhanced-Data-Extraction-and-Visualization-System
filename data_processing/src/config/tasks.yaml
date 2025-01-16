@@ -1,36 +1,34 @@
 
-get_data:
+read_pdf:
   description: >-
-    Browse https://sales.energysavings.com/plan-selection?zipCode=75252&promoCode=Default
-    for every company get plan details  and write to markdown
-  expected_output: >-
-    Add your expected_output here
-  agent: >-
-    data_collector
+    read pdf file,
+    for each electricity fact label or EFL,
+    get  Company Name, Plan Name,  Base Charge and Energy Charge,
+    make sure no plan is missed.
 
-# read_efl:
-#   description: >-
-#     write contents of 'efl' link ot a markdown
-#   expected_output: >-
-#     markdown information of efl or Electricity Facts Label
-#   agent: >-
-#     data_collector
+  expected_output: >-
+    information of five plans as markdown
+  agent: >-
+    pdf_reader
 
 
 get_relevant_data:
   description: >-
-    get Company name, plan name, base charge and energy charge from Electricity Facts
-    Label or EFL of different companies
+    Get Company Name, Plan Name,  Base Charge and Energy Charge charge for all companies and plans,
+    enter 0 for unavailable charges,
+    remove units and currency signs from base charge and energy charge,
+    remove any commas(',') from Company Name and Plan Name.
   expected_output: >-
-    Company name, plan name, and energy charge
+    Company name, plan name, base charge and energy charge
   agent: >-
-    data_analyzer
+    data_cleaner
 
-# write_to_file:
-#   description: >-
-#     append data to output/out.csv
-#   expected_output: >-
-#     out.csv file with extracted and analyzed data
-#   agent: >-
-#     data_writer
+write_to_file:
+  description: >-
+    write data to a output\plans.csv file, 
+    overwrite if file already present.
+  expected_output: >-
+    plan.csv file with comma seperated data
+  agent: >-
+    data_writer
 
